@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: demo-vm
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: primary
+        url: https://10.247.100.172
+        create_datavolume: true
+      - cluster: secondary
+        url: https://kubernetes.default.svc
+        create_datavolume: false
+  template:
+    metadata:
+      name: "{{.cluster}}-demo-vm"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/kumarp20/gitops-sample.git
+        targetRevision: HEAD
+        path: "applicationsets/demo-vm/kustomize/{{.cluster}}"
+      destination:
+        server: "{{.url}}"
+        namespace: demo-vm
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
