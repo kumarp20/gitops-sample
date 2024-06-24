@@ -7,7 +7,7 @@ spec:
   - list:
       elements:
       - cluster: primary
-        url: https://10.247.100.172
+        url: https://10.247.100.172:6443
         create_datavolume: "true"
       - cluster: secondary
         url: https://kubernetes.default.svc
