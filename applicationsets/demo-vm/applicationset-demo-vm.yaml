@@ -19,7 +19,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/kumarp20/gitops-sample.git
-        targetRevision: HEAD
+        targetRevision: main
         path: "applicationsets/demo-vm/kustomize/{{cluster}}"
       destination:
         server: "{{url}}"
