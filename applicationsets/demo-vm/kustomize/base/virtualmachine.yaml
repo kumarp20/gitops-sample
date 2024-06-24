@@ -5,7 +5,7 @@ metadata:
     kubevirt.io/os: linux
   name: vm2
 spec:
-  running: true
+  running: false
   template:
     metadata:
       creationTimestamp: null
