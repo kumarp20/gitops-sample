@@ -3,7 +3,7 @@ kind: DataVolume
 metadata:
   name: "cirros-rep"
 spec:
-  {{- if .Values.create_datavolume }}
+  {{- if .Values.create_datavolume == "true" }}
   source:
     http:
       url: "https://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img" # S3 or GCS

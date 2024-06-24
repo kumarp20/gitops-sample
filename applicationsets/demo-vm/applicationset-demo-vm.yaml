@@ -8,21 +8,21 @@ spec:
       elements:
       - cluster: primary
         url: https://10.247.100.172
-        create_datavolume: true
+        create_datavolume: "true"
       - cluster: secondary
         url: https://kubernetes.default.svc
-        create_datavolume: false
+        create_datavolume: "false"
   template:
     metadata:
-      name: "{{.cluster}}-demo-vm"
+      name: "{{cluster}}-demo-vm"
     spec:
       project: default
       source:
         repoURL: https://github.com/kumarp20/gitops-sample.git
         targetRevision: HEAD
-        path: "applicationsets/demo-vm/kustomize/{{.cluster}}"
+        path: "applicationsets/demo-vm/kustomize/{{cluster}}"
       destination:
-        server: "{{.url}}"
+        server: "{{url}}"
         namespace: demo-vm
       syncPolicy:
         syncOptions:
