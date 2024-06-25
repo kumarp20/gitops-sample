@@ -4,8 +4,6 @@ kind: Kustomization
 bases:
   - ../base
 
-namePrefix: primary-
-
 patches:
   - patch: |
       - op: replace
