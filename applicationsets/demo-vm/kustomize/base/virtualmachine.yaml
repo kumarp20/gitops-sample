@@ -30,7 +30,7 @@ spec:
       volumes:
       - name: disk0
         persistentVolumeClaim:
-          claimName: cirros-rep
+          claimName: cirros-vol1
       - cloudInitNoCloud:
           userData: |
             #cloud-config

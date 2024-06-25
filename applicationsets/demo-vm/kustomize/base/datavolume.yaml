@@ -1,7 +1,7 @@
 apiVersion: cdi.kubevirt.io/v1beta1
 kind: DataVolume
 metadata:
-  name: "cirros-rep"
+  name: "cirros-vol1"
 spec:
   {{- if .Values.create_datavolume == "true" }}
   source:
