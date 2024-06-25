@@ -13,4 +13,6 @@ patches:
         value: true
     target:
       kind: VirtualMachine
+resources:
+  - path: datavolume.yaml
 
