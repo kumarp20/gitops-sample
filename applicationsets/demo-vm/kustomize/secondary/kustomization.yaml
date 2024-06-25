@@ -11,3 +11,10 @@ patches:
         value: cirros-replica
     target:
       kind: VirtualMachine
+
+  - patch: |
+      - op: replace
+        path: /spec/running
+        value: true
+    target:
+      kind: VirtualMachine
