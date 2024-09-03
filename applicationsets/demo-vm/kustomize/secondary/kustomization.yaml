@@ -7,14 +7,7 @@ bases:
 patches:
   - patch: |
       - op: replace
-        path: /spec/template/spec/volumes/0/persistentVolumeClaim/claimName
-        value: cirros-replica
-    target:
-      kind: VirtualMachine
-
-  - patch: |
-      - op: replace
         path: /spec/running
-        value: true
+        value: false
     target:
       kind: VirtualMachine
