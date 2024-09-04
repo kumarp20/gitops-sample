@@ -8,6 +8,6 @@ patches:
   - patch: |
       - op: replace
         path: /spec/running
-        value: true
+        value: false
     target:
       kind: VirtualMachine
